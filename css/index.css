@@ -1,0 +1,29 @@
+body {
+    background: #777;
+}
+
+.container {
+    background: #888;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+    height: 30vh;
+}.container2 {
+    background: #888;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+    height: 10vh;
+}
+.container .bar {
+    width: 3vw;
+    height: 20vh;
+    margin: 0 .1rem;
+    background: darkred;
+}
