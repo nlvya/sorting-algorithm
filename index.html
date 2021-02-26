@@ -12,18 +12,16 @@
 <body>
 	<div class="container">
 		<button id="sortButton" onclick="bubbleSort()">Bubble Sort</button>
-		<button id="sortButton" onclick="bubbleSort()">Bubble Sort</button>
-		<button id="sortButton" onclick="bubbleSort()">Bubble Sort</button>
 	</div>
 	<div class="container" id="bottomContainer">
 		<p>Number of Rectangles:</p>
-		<input id="slider" type="range" min="8" max="35" onchange="setup()" value="15">
+		<input id="slider" type="range" min="8" max="100" oninput="setup()" value="15">
 		<p id="value"></p>
 
-		<button id="reset" onclick="reset()">Reset</button>
+		<button id="reset" onclick="reset()">Reload</button>
 	</div>
 	<!--<script src="js/index.js"></script>-->
 	<!--<script src="js/boxes.js"></script>-->
-	<script src="js/drawingStuff.js"></script>
+	<script src="js/index.js"></script>
 </body>
 </html>
