@@ -1,8 +1,9 @@
 body {
     background: #777;
+    margin: 0;
 }
 
-.container {
+.p5Canvas {
     background: #888;
     display: flex;
     justify-content: center;
@@ -11,19 +12,26 @@ body {
     margin-right: auto;
     width: 80vw;
     height: 30vh;
-}.container2 {
+}
+.container {
     background: #888;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-    width: 80vw;
-    height: 10vh;
+    width: 100vw;
+    height: 8vh;
 }
-.container .bar {
-    width: 3vw;
-    height: 20vh;
-    margin: 0 .1rem;
-    background: darkred;
+button {
+    cursor: pointer;
+}
+.container button {
+    background: green;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 0 1rem;
+}
+#reset {
+    background: maroon;
 }

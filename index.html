@@ -7,26 +7,23 @@
 <title>Sorting Algorithm</title>
 
 <link rel="stylesheet" href="css/index.css">
+<script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
 </head>
 <body>
-	<div class="container2">
-		<button onclick="sortBoxes()">Bubble Sort</button>
-		<button onclick="start()">Reset</button>
-	</div>
 	<div class="container">
-		<div class="bar" id="1"></div>
-		<div class="bar" id="2"></div>
-		<div class="bar" id="3"></div>
-		<div class="bar" id="4"></div>
-		<div class="bar" id="5"></div>
-		<div class="bar" id="6"></div>
-		<div class="bar" id="7"></div>
-		<div class="bar" id="8"></div>
-		<div class="bar" id="9"></div>
-		<div class="bar" id="10"></div>
+		<button id="sortButton" onclick="bubbleSort()">Bubble Sort</button>
+		<button id="sortButton" onclick="bubbleSort()">Bubble Sort</button>
+		<button id="sortButton" onclick="bubbleSort()">Bubble Sort</button>
 	</div>
+	<div class="container" id="bottomContainer">
+		<p>Number of Rectangles:</p>
+		<input id="slider" type="range" min="8" max="35" onchange="setup()" value="15">
+		<p id="value"></p>
 
+		<button id="reset" onclick="reset()">Reset</button>
+	</div>
 	<!--<script src="js/index.js"></script>-->
-	<script src="js/boxes.js"></script>
+	<!--<script src="js/boxes.js"></script>-->
+	<script src="js/drawingStuff.js"></script>
 </body>
 </html>
