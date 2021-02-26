@@ -10,6 +10,7 @@ var x;
 var stop = false;
 var scaleX = 0.6;
 var scaleY = 0.5;
+var working;
 
 function setup() {
     heights = [];
@@ -51,30 +52,36 @@ function reset() {
 
 const timer = ms => new Promise(res => setTimeout(res, ms)) //creates a function to delay each iteration of the movements
 async function bubbleSort() {
-    stop = false;
-    var swap;
-    x = heights;
-    do {
-        swap = false;
-        for (var i = 0; i < x.length - 1; i ++) {
-            if (!stop) {
-                changeHeight(i, x[i], "red");
-                changeHeight(i + 1, x[i + 1], "red");
-                await timer(waitTime);
-                if (x[i] < x[i + 1]) {
-                    var temp = x[i];
-                    x[i] = x[i + 1];
-                    changeHeight(i, x[i + 1], "darkred")
-                    x[i + 1] = temp;
-                    changeHeight(i + 1, temp, "darkred")
-                    swap = true;
+    if (!working) {
+        stop = false;
+        var swap;
+        x = heights;
+        do {
+            swap = false;
+            for (var i = 0; i < x.length - 1; i ++) {
+                if (!stop) {
+                    working = true;
+                    changeHeight(i, x[i], "red");
+                    changeHeight(i + 1, x[i + 1], "red");
+                    await timer(waitTime);
+                    if (x[i] < x[i + 1]) {
+                        var temp = x[i];
+                        x[i] = x[i + 1];
+                        changeHeight(i, x[i + 1], "darkred")
+                        x[i + 1] = temp;
+                        changeHeight(i + 1, temp, "darkred")
+                        swap = true;
+                    }
+                    await timer(waitTime);
+                    changeHeight(i, x[i], "darkred");
+                    changeHeight(i + 1, x[i + 1], "darkred");
                 }
-                await timer(waitTime);
-                changeHeight(i, x[i], "darkred");
-                changeHeight(i + 1, x[i + 1], "darkred");
             }
+        } while (swap);
+        if (swap == false) {
+            working = false;
         }
-    } while (swap);
+    }
 }
 
 function changeHeight(r, height, color) {

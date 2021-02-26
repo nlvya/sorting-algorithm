@@ -3,7 +3,7 @@ var min = 100;
 var numOfBoxes = 10;
 var heights = [];
 var IDs = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
-var waitTime = 100;
+var waitTime = 0;
 var defaultColor = "darkred";
 var highlightedColor = "red";
 
